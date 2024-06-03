@@ -48,18 +48,37 @@
             font-weight: bold;
             margin-top: 10px;
         }
-        .gg{
-            padding-left: 170px;
+
+        .time-slot {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .time-slot button {
+            flex: 1 1 calc(33.33% - 10px);
+            margin: 5px;
             font-size: 13px;
             border-radius: 10px;
             background-color: white;
+            border: 1px solid #ece8e8;
+            cursor: pointer;
         }
-        .gh{
-            border-radius: 5px;
-            border-color: #ece8e8;
-            background-color: #fff;
-            font-size: 12px;
-            
+
+        .time-slot button label {
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .time-slot button {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .time-slot button {
+                flex: 1 1 100%;
+            }
         }
         
     </style>
@@ -90,18 +109,15 @@
                                     <input type="number" name="bb-number" id="bb-number" class="form-control" placeholder="Number of People" required>
                                 </div>
                             </div>
-                            <div class="gg">
-                                <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">8:00-10:00</button> </label> 
-                                <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">10:00-12:00 </button></label>
-                                    <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">12:00-2:00 </button></label></div><br>
-                                        <div class="gg"> <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">2:00-4:00 </button></label>
-                                            <button class="gh"> <label><input type="checkbox" name="Haircuts" value="buzzcut">4:00-6:00 </button></label>
-                                                <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">6:00-8:00 </button></label>
-                                    </div><br>
-                                    <div class="gg">
-                                        <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">8:00-After hours</label></button>
-                                    </div><br>
-                            </div>
+                            <div class="time-slot">
+                                <button class="gh"><label><input type="checkbox" name="time" value="8:00-10:00"> 8:00-10:00</label></button>
+                                <button class="gh"><label><input type="checkbox" name="time" value="10:00-12:00"> 10:00-12:00</label></button>
+                                <button class="gh"><label><input type="checkbox" name="time" value="12:00-2:00"> 12:00-2:00</label></button>
+                                <button class="gh"><label><input type="checkbox" name="time" value="2:00-4:00"> 2:00-4:00</label></button>
+                                <button class="gh"><label><input type="checkbox" name="time" value="4:00-6:00"> 4:00-6:00</label></button>
+                                <button class="gh"><label><input type="checkbox" name="time" value="6:00-8:00"> 6:00-8:00</label></button>
+                                <button class="gh"><label><input type="checkbox" name="time" value="8:00-After hours"> 8:00-After hours</label></button>
+                            </div><br>
                             <div class="mb-3">
                                 <textarea name="bb-message" rows="3" class="form-control" id="bb-message" placeholder="Comment (Optional)"></textarea>
                             </div>
@@ -111,18 +127,13 @@
                                 </div>
                                 <div style="display: inline-block;">
                                     <a class="button" href="https://api.whatsapp.com/send?phone=0713871742&text=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services">Reserve</a><br>
-                                    
                                 </div>
                                 <div style="display: inline-block;">
                                     <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=unisexspakeglamguru@gmail.com&su=Appointment%20Booking&body=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services" target="_blank">Email</a>
-
-                                    
                                 </div>
-
                                 <div>Reserving is only Ksh 500 Non-refundable</div>
                                 <!-- Non-refundable policy note -->
                             </div>
-                            
                         </div>
                     </form>
                 </div>

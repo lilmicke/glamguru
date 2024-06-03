@@ -305,7 +305,7 @@
             }
 
             let message = "I want to book an appointment with Glam Guru Services for the following: \n" + selectedServices.join('\n');
-            let phoneNumber = "0713871742";
+            let phoneNumber = "+254713871742";
             let url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
             window.open(url, '_blank');
