@@ -13,12 +13,9 @@
     <link rel="stylesheet" href="css/mike.css">
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa; /* Set background color if needed */
+            background-image: url(images/subtles.jpeg);
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         /* Ensure consistency in font family */
@@ -106,7 +103,6 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            padding left: 60px;
         }
 
         .form-control {
@@ -119,21 +115,6 @@
 
         .mb-5 {
             margin-bottom: 2rem !important;
-        }
-
-        /* Styling for phone input with country code */
-        .phone-input {
-            display: flex;
-            align-items: center;
-        }
-
-        .phone-input input[type="tel"] {
-            flex: 1;
-        }
-
-        .phone-input span {
-            margin-right: 10px;
-            font-size: 16px;
         }
     </style>
 </head>
@@ -152,7 +133,9 @@
                                 <div class="col-lg-6 col-12 mb-3">
                                     <input type="text" name="bb-name" id="bb-name" class="form-control" placeholder="Full name" required>
                                 </div>
-                               
+                                <div class="col-lg-6 col-12 mb-3">
+                                    <input type="tel" class="form-control" name="bb-phone" placeholder="Phone" required>
+                                </div>
                                 
                                 <div class="col-lg-6 col-12 mb-3">
                                     <input type="date" name="bb-date" id="bb-date" class="form-control" placeholder="Date" required>
@@ -172,15 +155,19 @@
                             </div><br>
                             <div class="mb-3">
                                 <textarea name="bb-message" rows="3" class="form-control" id="bb-message" placeholder="Comment (Optional)"></textarea>
-                                <div class="text-center">
-                                    <a href="ourrates.html" class="button">Book</a>
-                                    <a class="button" href="https://api.whatsapp.com/send?phone=254713871742&text=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services">Reserve</a>
-                                    <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=unisexspakeglamguru@gmail.com&su=Appointment%20Booking&body=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services" target="_blank">Email</a>
-                                    <div class="non-refundable">Reserving is only Ksh 500 Non-refundable</div>
-                                </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="text-center">
+                                <a href="ourrates.html" class="button">Book</a>
+                                <a class="button" href="https://api.whatsapp.com/send?phone=+254713871742&text=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services">Reserve</a>
+                                <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=unisexspakeglamguru@gmail.com&su=Appointment%20Booking&body=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services" target="_blank">Email</a>
+                                <div class="non-refundable">Reserving is only Ksh 500 Non-refundable</div>
+                                <!-- Non-refundable policy note -->
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+</body>
+</html>
