@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/tooplate-style.css">
+    <link rel="stylesheet" href="css/mike.css">
+    <style>
+        body {
+            background-image: url(images/subtles.jpeg);
+        }
+
+        /* Ensure consistency in font family */
+        .booking-form-body h2,
+        .booking-form-body p {
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            color: #333; /* Adjust color if needed */
+        }
+
+        /* Adjust font size and color of the "Reserve" button */
+        .button {
+            font-size: 16px;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #060707;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0e0f0e;
+        }
+
+        /* Style for the non-refundable policy */
+        .non-refundable {
+            color: #d9534f; /* Bootstrap danger color for attention */
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .gg{
+            padding-left: 170px;
+            font-size: 13px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .gh{
+            border-radius: 5px;
+            border-color: #ece8e8;
+            background-color: #fff;
+            font-size: 12px;
+            
+        }
+        
+    </style>
+</head>
+<body class="t">
+    <section class="s" id="booking-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-12">
+                    <form action="#" method="post" class="custom-form booking-form" id="bb-booking-form" role="form">
+                        <div class="text-center mb-5">
+                            <h2 class="booking-form-body h2">Book a seat</h2>
+                            <p class="booking-form-body p">Please fill out the form and we will get back to you</p>
+                        </div>
+                        <div class="booking-form-body">
+                            <div class="row">
+                                <div class="col-lg-6 col-12 mb-3">
+                                    <input type="text" name="bb-name" id="bb-name" class="form-control" placeholder="Full name" required>
+                                </div>
+                                <div class="col-lg-6 col-12 mb-3">
+                                    <input type="tel" class="form-control" name="bb-phone" placeholder="Phone" required>
+                                </div>
+                                
+                                <div class="col-lg-6 col-12 mb-3">
+                                    <input type="date" name="bb-date" id="bb-date" class="form-control" placeholder="Date" required>
+                                </div>
+                                <div class="col-lg-6 col-12 mb-3">
+                                    <input type="number" name="bb-number" id="bb-number" class="form-control" placeholder="Number of People" required>
+                                </div>
+                            </div>
+                            <div class="gg">
+                                <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">8:00-10:00</button> </label> 
+                                <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">10:00-12:00 </button></label>
+                                    <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">12:00-2:00 </button></label></div><br>
+                                        <div class="gg"> <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">2:00-4:00 </button></label>
+                                            <button class="gh"> <label><input type="checkbox" name="Haircuts" value="buzzcut">4:00-6:00 </button></label>
+                                                <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">6:00-8:00 </button></label>
+                                    </div><br>
+                                    <div class="gg">
+                                        <button class="gh"><label><input type="checkbox" name="Haircuts" value="buzzcut">8:00-After hours</label></button>
+                                    </div><br>
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="bb-message" rows="3" class="form-control" id="bb-message" placeholder="Comment (Optional)"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <div style="display: inline-block;">
+                                    <a href="ourrates.html" class="button">Book</a><br>
+                                </div>
+                                <div style="display: inline-block;">
+                                    <a class="button" href="https://api.whatsapp.com/send?phone=0713871742&text=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services">Reserve</a><br>
+                                    
+                                </div>
+                                <div style="display: inline-block;">
+                                    <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=unisexspakeglamguru@gmail.com&su=Appointment%20Booking&body=I%20want%20to%20book%20an%20appointment%20with%20Glam%20Guru%20Services" target="_blank">Email</a>
+
+                                    
+                                </div>
+
+                                <div>Reserving is only Ksh 500 Non-refundable</div>
+                                <!-- Non-refundable policy note -->
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

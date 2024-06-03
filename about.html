@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam Guru Shop Location & Hours</title>
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            background-image: url(images/subtles.jpeg);/* Background color of the body is a light gray */
+            color: #333; /* Dark gray for better contrast */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 30px; /* Increased padding for better spacing */
+            background-color: #fff; /* Container background color is white */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for a subtle 3D effect */
+            animation: fadeIn 1s ease;
+        }
+        h1 {
+            color: #333; /* Dark gray text color */
+            font-size: 36px; /* Slightly larger font size */
+            margin-bottom: 20px;
+            font-family: 'Arial Black', Gadget, sans-serif; /* Bold and modern heading font */
+            animation: bounce 1s ease infinite alternate; /* Add bounce animation */
+        }
+        p {
+            font-family: style;
+            color: #555; /* Medium gray for less harsh text */
+            font-size: 18px;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease;
+            font-style: italic; /* Add slideIn animation */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .location {
+            animation: float 2s ease infinite;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px; /* Add margin below the icon */
+        }
+        .location:hover {
+            animation-play-state: paused; /* Pause animation on hover */
+        }
+        a {
+            color: #1b6d27; /* Custom green color for links */
+            text-decoration: none; /* Remove underline from links */
+            font-weight: bold; /* Bold links for emphasis */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover for clarity */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Glam Guru Shop!</h1>
+        <div><img src="images/location (1).png" alt="Location Icon" class="location"></div>
+        
+        <p>We are located at: <br><a href="https://www.google.com/maps/place/Landmark+Karen/@-1.3214785,36.7219007,15z/data=!4m6!3m5!1s0x182f1a39c5fb68f1:0xf80c3a16b119bbee!8m2!3d-1.3214785!4d36.7219007!16s%2Fg%2F11c5wb0dzk" target="_blank">Karen Landmark</a><br><br>
+            <p>Opening Hours:</p>
+        <p>Monday - Saturday: 8:00 AM - Late</p>
+        <p> Sunday: 12:00 PM - 6:00 PM</p>
+        
+    </div>
+</body>
+</html>

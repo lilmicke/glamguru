@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam Guru Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/background.jpg);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .service-group {
+            margin-bottom: 30px;
+        }
+        .dropdown {
+            margin-bottom: 15px;
+        }
+        .dropdownbtn {
+            width: 60%;
+            height: 40px;
+            background-color: #02070c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 auto;
+            display: block; /* Ensures button occupies full width */
+        }
+        .dropdown-content {
+            display: none;
+            position: relative;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 12px 16px;
+            z-index: 1;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .dropdown-content label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .dropdown-content label input {
+            margin-right: 5px;
+        }
+        .bb {
+            width: 60%;
+            text-align: center;
+            height: 40px;
+            background-color: #02070c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 auto;
+            display: block;
+            outline: white;
+        }
+        .hr {
+            height: 2px;
+            background-color: black;
+        }
+        .des {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Welcome to Glam Guru</h1>
+        
+        <div class="service-group">
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown1')">Haircuts</button>
+                <div class="dropdown-content" id="dropdown1">
+                    <label><input type="checkbox" name="haircuts" value="Bespoke - Ksh 1,000">Bespoke <div class="des">Ksh 1,000</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Gentlemen's cut + beard - Ksh 800">Gentlemen's cut + beard <div class="des"> Ksh 800</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Beard cut - Ksh 500">Beard cut <div class="des">Ksh 500</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Beard treatment - Ksh 1,000">Beard treatment <div class="des">Ksh 1,000</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Bespoke + black dye - Ksh 2,000">Bespoke + black dye <div class="des">Ksh 2,000</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Bespoke + other colors - Ksh 4,000">Bespoke + other colors <div class="des">Ksh 4,000</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Braiding - Ksh 4,000">Braiding <div class="des">Ksh 4,000</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Line up - Ksh 500">Line up <div class="des">Ksh 500</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Texturizer - Ksh 2,000">Texturizer <div class="des">Ksh 2,000</div></label>
+                    <label><input type="checkbox" name="haircuts" value="Face treatment - KSH 1,000">Face treatment <div class="des">KSH 1,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown2')">Kids</button>
+                <div class="dropdown-content" id="dropdown2">
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Bespoke <div class="des">Ksh500</div></label> 
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Bespoke +other colors <div class="des">Ksh 1,500</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Texturizer <div class="des">Ksh 2,000</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Crazy colors <div class="des">Ksh 3,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown3')">Brows</button>
+                <div class="dropdown-content" id="dropdown3">
+                    <label><input type="checkbox" name="Brows" value="razor">Razor <div class="des">Ksh300</div></label> 
+                    <label><input type="checkbox" name="Brows" value="threading">Threading <div class="des">Ksh500</div></label>
+                    <label><input type="checkbox" name="Brows" value="twizing">Twizing <div class="des">Ksh500</div></label>
+                    <label><input type="checkbox" name="Brows" value="microblading">Microblading <div class="des">Ksh25,000</div></label>
+                    <label><input type="checkbox" name="Brows" value="combo_brows">Combo brows <div class="des"> Ksh20,000</div></label>
+                    <label><input type="checkbox" name="Brows" value="tinting">Tinting <div class="des">Ksh1,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown4')">Dred Locs</button>
+                <div class="dropdown-content" id="dropdown4">
+                    <label><input type="checkbox" name="Dred Locs" value="fresh_locs">Fresh locs <div class="des">KSH 6,000</div></label> 
+                    <label><input type="checkbox" name="Dred Locs" value="retouch">Retouch <div class="des">KSH 3,000</div></label>
+                    <label><input type="checkbox" name="Dred Locs" value="treatment">Treatment <div class="des">KSH 2,000</div></label>
+                    <label><input type="checkbox" name="Dred Locs" value="styling">Styling <div class="des">KSH1,000</div></label>
+                    <label><input type="checkbox" name="Dred Locs" value="baby_locs">Baby locs/ragged <div class="des">KSH3,000</div></label>
+                    <label><input type="checkbox" name="Dred Locs" value= "sister_locs">Sister locs <div class="des">KSH 30,000</div></label>
+                    <label><input type="checkbox" name="Dred Locs" value="sister_locs_retouch">Sister locs retouch <div class="des">KSH 15,000</div></label>
+                    <label><input type="checkbox" name="Dred Locs" value="stich_lines">Stich lines <div class="des">KSH 3,500</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown5')">Wedding Package</button>
+                <div class="dropdown-content" id="dropdown5">
+                    <label><input type="checkbox" name="Wedding Package" value="bride">Bride <div class="des">KSH 10,000</div></label>
+                    <label><input type="checkbox" name="Wedding Package" value="brides_maids">Bride's maids <div class="des">KSH 5,000</div></label>
+                    <label><input type="checkbox" name="Wedding Package" value="groom">Groom <div class="des">KSH 3,000</div></label>
+                    <label><input type="checkbox" name="Wedding Package" value="groomsmen">Groomsmen <div class="des">KSH 2,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown6')">Weaving</button>
+                <div class="dropdown-content" id="dropdown6">
+
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Track and saw <div class="des">KSH 2,500</div></label> 
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Full head synthetics <div class="des">KSH 3,000</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Full head short human <div class="des">KSH 3,000</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Full head with closure <div class="des">KSH 6,000</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Full head plus chemicals <div class="des">KSH 8,000</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Weaving with bonding glue  <div class="des">KSH 6,000</div></label>
+                    <label><input type="checkbox" name="Haircuts" value="buzzcut">Microweaving  <div class="des">KSH-8,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown7')">Waxing</button>
+                <div class="dropdown-content" id="dropdown7">
+               
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Full body  <div class="des">KSH 10,00</div><label> 
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Bikini   <div class="des">KSH 3,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Brazilian   <div class="des">KSH5,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Under arms  <div class="des">KSH 600</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Arms  <div class="des">KSH 2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Mustache  <div class="des">KSH 500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Steam <div class="des">KSH 2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Legs  <div class="des">KSH 2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Facial starting  <div class="des">KSH 3,000--15,000[DOP]</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Body scrub  <div class="des">KSH 4,500 </div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown8')">Braiding</button>
+                <div class="dropdown-content" id="dropdown8">
+                    
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Big Braids [shoulder lenght]  <div class="des">KSH 4,000</div></label> 
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Medium[shoulder length]  <div class="des">KSH 3,500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">small[shoulder length]   <div class="des">KSH 3,500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">[beyond shoulder lenght  <div class="des">KSH 10,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">knottes braids <div class="des">KSH 5,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">School lines <div class="des">[big KSH 500 , small KSH 1200 ,medium  KSH 800]</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown9')">Make up</button>
+                <div class="dropdown-content" id="dropdown9">
+                    
+                        <label><input type="checkbox" name="Haircuts" value="buzzcut">Day Make up   <div class="des">KSH 2,000</div></label> 
+                     <label><input type="checkbox" name="Haircuts" value="buzzcut">Facebeat  <div class="des">KSH 4,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown10')">Lashes</button>
+                <div class="dropdown-content" id="dropdown10">
+                    
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Strip lash  <div class="des">KSH 1,000</div></label> 
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Hybrid  <div class="des">KSH 5,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Hybrid Clusters  <div class="des">KSH 4,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Classic  <div class="des">KSH 4,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Volume  <div class="des">KSH 6,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Mega Volume  <div class="des">KSH 8,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown11')">Nail care</button>
+                <div class="dropdown-content" id="dropdown11">
+                    
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Manicure  <div class="des">KSH 1,000</div></label> 
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Pedicure  <div class="des">KSH2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Parafin wrap  <div class="des">KSH 5,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Gel Polish <div class="des">KSH 1,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Stick ons with gel  <div class="des">KSH 2,500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Tips gel <div class="des"> KSH 3,000</div></label><br><br>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Overlays .fresh  <div class="des">KSH 3,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Overlays .refill <div class="des">KSH 2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Acrylics  <div class="des">KSH 4,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">gum gel  <div class="des">KSH 3,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown12')">Hair Care</button>
+                <div class="dropdown-content" id="dropdown12">
+                    
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Undo lines  <div class="des">KSH 1,000</div></label> 
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Artificial locs undo  <div class="des">KSH 2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Undo braids  <div class="des">KSH 1,500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Wash and blow dry <div class="des"> KSH 1,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Blowdry <div class="des">KSH 800</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Straighten  <div class="des">KSH 500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Wash and set <div class="des">KSH 1,500</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Treatment from <div class="des">KSH 1,000--15,000[DOP]</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Steam Treatment from <div class="des">KSH 1,500--15,000[DOP]</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Coctail Treatment from <div class="des">KSH2,500--15,000[DOP]</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Deep Treatment from <div class="des">KSH3,000--20,000</div></label>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdownbtn" onclick="toggleDropdown('dropdown13')">Massage</button>
+                <div class="dropdown-content" id="dropdown13">
+                    
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Swedish [60min]  <div class="des">KSH 4,000</div> </label> 
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Deep tissue [60min]  <div class="des">KSH 6,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Aromatherapy  <div class="des">KSH 5,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Hotesone <div class="des">KSH 6,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Reflexology  <div class="des">KSH 5,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Indian head massage  <div class="des">KSH 2,000</div></label>
+        <label><input type="checkbox" name="Haircuts" value="buzzcut">Back massage <div class="des"> KSH 2,000</div></label>
+                </div>
+            </div>
+          
+            <!-- Add other service dropdowns here -->
+        </div>
+        
+        <hr class="hr">
+            
+        <div class="dropdown">
+            <button class="dropdownbtn" onclick="toggleDropdown('dropdown14')">Attendant</button>
+            <div class="dropdown-content" id="dropdown14">
+                <label><input type="checkbox" name="attendant" value="Nassir">Nassir</label>
+                <label><input type="checkbox" name="attendant" value="Erick">Erick</label>
+                <label><input type="checkbox" name="attendant" value="Caro">Caro</label>
+                <label><input type="checkbox" name="attendant" value="Winnie">Winnie</label>
+                <label><input type="checkbox" name="attendant" value="Purity">Purity</label>
+                <label><input type="checkbox" name="attendant" value="Dennis">Dennis</label>
+            </div>
+        </div>
+
+        <div><button class="bb" onclick="sendToWhatsApp()">Book Now</button></div><br>
+    </div>
+     </div>
+            <!-- Repeat for other services -->
+            
+    </div>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdownContent = document.getElementById(dropdownId);
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+
+        function sendToWhatsApp() {
+            let selectedServices = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+                selectedServices.push(checkbox.value);
+            });
+            
+            if (selectedServices.length === 0) {
+                alert("Please select at least one service.");
+                return;
+            }
+
+            let message = "I want to book an appointment with Glam Guru Services for the following: \n" + selectedServices.join('\n');
+            let phoneNumber = "0713871742";
+            let url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
