@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/tooplate-style.css">
     <link rel="stylesheet" href="css/mike.css">
+
     <style>
         body {
             background-image: url(images/background.jpg);
@@ -166,6 +167,19 @@
             }
         }
     </style>
+    <script>
+        function payWithMpesa() {
+            var phoneNumber = '254123456789'; // Replace with the merchant's M-Pesa paybill or phone number
+            var amount = '100'; // Replace with the amount to be paid
+        
+            // Construct the USSD string for M-Pesa payment
+            var ussdCode = '*150*3*4*1*'; // Replace with the correct USSD code for M-Pesa payments
+            var ussdString = ussdCode + encodeURIComponent(phoneNumber) + '*' + encodeURIComponent(amount) + '*1*';
+        
+            // Attempt to trigger USSD code automatically (may not work on all devices)
+            window.location.href = 'tel:' + ussdString;
+        }
+        </script>
     <script>
         function updateWhatsAppLink() {
             const name = document.getElementById('bb-name').value;
@@ -477,6 +491,9 @@
                     <div class="form-group text-center">
                         <a href="#" id="whatsapp-link" class="bb" onclick="updateWhatsAppLink()">Book</a>
                     </div>
+                    <div class="form-group text-center">
+                        <button class="bb" onclick="payWithMpesa()">Reserve</button>                    </div>
+                    
                     <p class="non-refundable">*Note:Reserving is ksh 500 and non-refundable</p>
                 </form>
             </div>
@@ -487,5 +504,6 @@
         <hr class="hr">
         
     </div>
+    
 </body>
 </html>
