@@ -221,6 +221,7 @@
     </script>
 </head>
 <body>
+    
     <div class="container">
         <h1 class="heading">Welcome to Glam Guru</h1>
         
@@ -271,7 +272,7 @@
                             <label><input type="checkbox" name="Dred Locs" value="styling">Styling <div class="des">KSH1,000</div></label>
                             <label><input type="checkbox" name="Dred Locs" value="baby_locs">Baby locs/ragged <div class="des">KSH3,000</div></label>
                             <label><input type="checkbox" name="Dred Locs" value= "sister_locs">Sister locs <div class="des">KSH 30,000</div></label>
-                            <label><input type="checkbox" name="Dred Locs" value="sister_locs_retouch">Sister locs retouch <div class="des">KSH 15,000</div></label>
+                            <label><input type="checkbox" name="Dred Locs" value="sister_locs_retouch">Sister locs retouch <div class="des">KSH 8,000</div></label>
                             <label><input type="checkbox" name="Dred Locs" value="stich_lines">Stich lines <div class="des">KSH 3,500</div></label>
                         </div>
                     </div>
@@ -442,7 +443,47 @@
         
                     window.open(url, '_blank');
                 }
-            </script>
+            </script><script>
+    function launchPayment() {
+        // Replace with package names for different payment apps
+        var packageNameMpesa = "com.android.stk";
+        var packageNameMySafaricom = "com.safaricom.mySafaricom";
+        var packageNameAirtelMoney = "com.myairtelapp";
+        
+        // Example: User selection (you can implement this based on your UI/requirements)
+        var userChoice = prompt("Enter payment method (M-Pesa, MySafaricom, Airtel Money):").toLowerCase();
+        
+        // Determine which package name to use based on user input
+        var packageName;
+        switch (userChoice) {
+            case "mpesa":
+                packageName = packageNameMpesa;
+                break;
+            case "mysafaricom":
+                packageName = packageNameMySafaricom;
+                break;
+            case "airtel money":
+                packageName = packageNameAirtelMoney;
+                break;
+            default:
+                alert("Invalid payment method or app not supported.");
+                return;
+        }
+        
+        // Check if the app is installed
+        fetch('intent://' + packageName + '#Intent;scheme=package;end')
+            .then(function(response) {
+                // If successful, attempt to launch the app
+                window.location.href = 'intent://' + packageName + '#Intent;scheme=package;end';
+            })
+            .catch(function(error) {
+                // Handle error, app may not be installed
+                console.error('Error launching app:', error);
+                // Optionally provide a fallback or error message for users
+                alert('The selected payment app is not installed on this device.');
+            });
+    }
+</script>
         </body>
         </html>
 
@@ -461,6 +502,9 @@
                         <input type="number" id="bb-number" class="form-control" placeholder="Number of people" required>
                     </div>
                     <div class="time-slot">
+                        <button>
+                            <label><input type="checkbox" name="time" value="8:00 AM">8:00 AM</label>
+                        </button>
                         <button>
                             <label><input type="checkbox" name="time" value="9:00 AM">9:00 AM</label>
                         </button>
@@ -499,7 +543,7 @@
                         <a href="#" id="whatsapp-link" class="bb" onclick="updateWhatsAppLink()">Book</a>
                     </div>
                     <div class="form-group text-center">
-                        <button class="bb" onclick="launchMpesa()">Reserve</button>
+                        <button class="bb" onclick="launchPayment()">Pay Now</button>
                     </div>
                     
                     <p class="non-refundable">*Note:Reserving is ksh 500 and non-refundable</p>
