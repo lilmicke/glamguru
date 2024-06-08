@@ -203,12 +203,11 @@
 <script>
     function launchPaymentApp() {
         var paymentApps = [
-            { name: "Safaricom", packageName: "com.safaricom.mpesa.lifestyle" },
+            { name: "M-Pesa", packageName: "com.android.stk" },
             { name: "Airtel Money", packageName: "com.airtel.africa.am" },
             { name: "PayPal", packageName: "com.paypal.android.p2pmobile" },
             { name: "Venmo", packageName: "com.venmo" },
-            { name: "sim toolkit", packageName: "com.android.stk" }
-
+            { name: "Cash App", packageName: "com.squareup.cash" }
             // Add more known payment apps as needed
         ];
 
@@ -224,9 +223,28 @@
 
     function confirmSelection() {
         var packageName = document.getElementById('paymentAppSelect').value;
-        
-        // Attempt to launch the app
-        window.location.href = 'intent://' + packageName + '#Intent;scheme=package;end';
+        checkAppInstalled(packageName);
+    }
+
+    function checkAppInstalled(packageName) {
+        // Create a test iframe to check if the app is installed
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = 'intent://' + packageName + '#Intent;scheme=package;end';
+
+        // Append the iframe to the body
+        document.body.appendChild(iframe);
+
+        // Set a timeout to handle the case where the app is not installed
+        setTimeout(function() {
+            // If the app was not launched, show an alert
+            if (!iframe.src) {
+                alert('Selected payment app is not installed on this device.');
+            }
+
+            // Clean up by removing the iframe
+            document.body.removeChild(iframe);
+        }, 2000); // 2 seconds timeout for demonstration
     }
 </script>
 </head>
@@ -453,6 +471,7 @@
         
                     window.open(url, '_blank');
                 }
+
             </script><script>
     function launchPayment() {
         // Replace with package names for different payment apps
@@ -494,14 +513,38 @@
             });
     }
 </script>
+
+<script>
+    function validateBooking() {
+        var checkboxes = document.querySelectorAll('input[name="time"]:checked');
+        
+        function isTimeSlotBooked(time) {
+            // Replace with your logic to check if 'time' is already booked
+            // For demonstration, assume time slots 8:00 AM and 10:00 AM are booked
+            var bookedTimes = ['8:00 AM', '10:00 AM'];
+            return bookedTimes.includes(time);
+        }
+        
+        for (var i = 0; i < checkboxes.length; i++) {
+            var time = checkboxes[i].value;
+            if (isTimeSlotBooked(time)) {
+                alert('The time slot ' + time + ' is already booked. Please choose another time.');
+                checkboxes[i].checked = false;
+                return false; // Prevent form submission
+            }
+        }
+        
+        // If no booked slots found, proceed with booking
+        return true;
+    }
+</script>
         </body>
         </html>
-
 
         <div class="booking-form">
             <div class="booking-form-body">
                 <h2>Book an Appointment</h2>
-                <form>
+                <form onsubmit="return validateBooking()">
                     <div class="form-group">
                         <input type="text" id="bb-name" class="form-control" placeholder="Enter your name" required>
                     </div>
@@ -511,52 +554,50 @@
                     <div class="form-group">
                         <input type="number" id="bb-number" class="form-control" placeholder="Number of people" required>
                     </div>
-                    <div class="time-slot">
-                        <button>
-                            <label><input type="checkbox" name="time" value="8:00 AM">8:00 AM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="9:00 AM">9:00 AM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="10:00 AM">10:00 AM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="11:00 AM">11:00 AM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="12:00 PM">12:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="1:00 PM">1:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="2:00 PM">2:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="3:00 PM">3:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="4:00 PM">4:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="5:00 PM">5:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="5:00 PM">6:00 PM</label>
-                        </button>
-                        <button>
-                            <label><input type="checkbox" name="time" value="5:00 PM">7:00 PM</label>
-                        </button>
+                    <div class="form-group">
+                        <div class="time-slot">
+                            <button>
+                                <label><input type="checkbox" name="time" value="8:00 AM">8:00 AM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="9:00 AM">9:00 AM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="10:00 AM">10:00 AM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="11:00 AM">11:00 AM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="12:00 PM">12:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="1:00 PM">1:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="2:00 PM">2:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="3:00 PM">3:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="4:00 PM">4:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="5:00 PM">5:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="6:00 PM">6:00 PM</label>
+                            </button>
+                            <button>
+                                <label><input type="checkbox" name="time" value="7:00 PM">7:00 PM</label>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-group text-center">
-                        <a href="#" id="whatsapp-link" class="bb" onclick="updateWhatsAppLink()">Book</a>
+                        <button type="submit" class="bb">Book</button>
                     </div>
-                    <div class="form-group text-center">
-                        <button class="bb" onclick="launchPayment()">Pay Now</button>
-                    </div>
-                    
-                    <p class="non-refundable">*Note:Reserving is ksh 500 and non-refundable</p>
+                    <p class="non-refundable">*Note: Reserving is ksh 500 and non-refundable</p>
                 </form>
             </div>
         </div>
