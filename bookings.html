@@ -200,25 +200,35 @@
             }
         }
     </script>
-      <script>
-        function launchMpesa() {
-            // Replace with your package name for M-Pesa or SIM Toolkit
-            var packageName = "com.android.stk";
-            
-            // Check if the app is installed
-            fetch('intent://' + packageName + '#Intent;scheme=package;end')
-                .then(function(response) {
-                    // If successful, attempt to launch the app
-                    window.location.href = 'intent://' + packageName + '#Intent;scheme=package;end';
-                })
-                .catch(function(error) {
-                    // Handle error, app may not be installed
-                    console.error('Error launching app:', error);
-                    // Optionally provide a fallback or error message for users
-                    alert('M-Pesa app is not installed on this device.');
-                });
-        }
-    </script>
+<script>
+    function launchPaymentApp() {
+        var paymentApps = [
+            { name: "M-Pesa", packageName: "com.safaricom.mpesa.lifestyle" },
+            { name: "Airtel Money", packageName: "com.airtel.africa.am" },
+            { name: "PayPal", packageName: "com.paypal.android.p2pmobile" },
+            { name: "Venmo", packageName: "com.venmo" },
+            { name: "sim toolkit", packageName: "com.android.stk" }
+
+            // Add more known payment apps as needed
+        ];
+
+        var appOptions = paymentApps.map(function(app) {
+            return '<option value="' + app.packageName + '">' + app.name + '</option>';
+        }).join('');
+
+        var selectHtml = '<select id="paymentAppSelect">' + appOptions + '</select>';
+        var confirmHtml = '<button onclick="confirmSelection()">Pay with selected app</button>';
+        
+        document.getElementById('appSelector').innerHTML = selectHtml + confirmHtml;
+    }
+
+    function confirmSelection() {
+        var packageName = document.getElementById('paymentAppSelect').value;
+        
+        // Attempt to launch the app
+        window.location.href = 'intent://' + packageName + '#Intent;scheme=package;end';
+    }
+</script>
 </head>
 <body>
     
