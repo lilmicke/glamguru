@@ -518,12 +518,8 @@
     function validateBooking() {
         var checkboxes = document.querySelectorAll('input[name="time"]:checked');
         
-        function isTimeSlotBooked(time) {
-            // Replace with your logic to check if 'time' is already booked
-            // For demonstration, assume time slots 8:00 AM and 10:00 AM are booked
-            var bookedTimes = ['8:00 AM', '10:00 AM'];
-            return bookedTimes.includes(time);
-        }
+        // Simulated data for booked times (replace with actual backend integration)
+        var bookedTimes = ['8:00 AM', '10:00 AM', '1:00 PM'];
         
         for (var i = 0; i < checkboxes.length; i++) {
             var time = checkboxes[i].value;
@@ -536,6 +532,11 @@
         
         // If no booked slots found, proceed with booking
         return true;
+    }
+    
+    function isTimeSlotBooked(time) {
+        // Check if the selected time is in the bookedTimes array
+        return bookedTimes.includes(time);
     }
 </script>
         </body>
